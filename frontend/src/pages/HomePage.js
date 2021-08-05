@@ -6,7 +6,7 @@ const HomePage = () => {
   return (
     <>
       {books.map((book) => (
-        <Book key={book.name} book={book}></Book>
+        <Book key={book.title} book={book}></Book>
       ))}
     </>
   );

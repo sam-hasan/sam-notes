@@ -10,14 +10,14 @@ const Book = ({ book }) => {
       <div className="flex-none w-44 relative">
         <img
           src={book.image}
-          alt={book.name}
+          alt={book.title}
           className="absolute inset-0 w-full h-full object-cover rounded-lg"
         />
       </div>
       <div className="flex-auto pl-6">
         <div className="flex flex-wrap items-baseline">
           <h1 className="w-full flex-none font-semibold mb-2.5 text-xl text-purple-800">
-            {book.name}
+            {book.title}
           </h1>
 
           <div className="text-base text-gray-500 font-semibold ">

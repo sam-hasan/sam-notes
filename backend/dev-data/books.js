@@ -1,6 +1,5 @@
 const books = [
   {
-    _id: '1',
     title: 'The Invisbile Life of Addie LaRue',
     author: 'V.E Schwab',
     image: '/images/the-invisible-life-of-addie-larue.jpeg',
@@ -23,7 +22,6 @@ const books = [
     numComments: 6,
   },
   {
-    _id: '2',
     title: 'Mindset',
     author: 'Carol S. Dweck',
     image: '/images/mindset.jpeg',
@@ -46,7 +44,6 @@ const books = [
     numComments: 3,
   },
   {
-    _id: '3',
     title: 'To Kill A Mockingbird',
     author: 'Harper Lee',
     image: '/images/to-kill-a-mockingbird.jpeg',
@@ -69,7 +66,6 @@ const books = [
     numComments: 5,
   },
   {
-    _id: '4',
     title: 'The Fault In Our Stars',
     author: 'John Green',
     image: '/images/the-fault-in-our-stars.jpeg',
@@ -92,7 +88,6 @@ const books = [
     numComments: 2,
   },
   {
-    _id: '5',
     title: "Monday's Not Coming",
     author: 'Tiffany Jackson',
     image: '/images/mondays-not-coming.jpeg',
@@ -115,7 +110,6 @@ const books = [
     numComments: 3,
   },
   {
-    _id: '6',
     title: 'Becoming',
     author: 'Michelle Obama',
     image: '/images/becoming.jpeg',
@@ -139,4 +133,4 @@ const books = [
   },
 ];
 
-export default books;
+module.exports = books;

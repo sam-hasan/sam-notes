@@ -11,7 +11,7 @@ const BookPage = ({ match }) => {
           <img src={book.image}></img>
         </div>
         <div className="text-4xl m-auto text-indigo-900">
-          {book.name} by {book.author}
+          {book.title} by {book.author}
         </div>
       </div>
       {/* The book in three sentences */}

@@ -2,10 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Book from '../components/Book';
 import Message from '../components/Message';
-
 import Spinner from '../components/Spinner';
 import { listBooks } from '../actions/bookActions';
-import { Alert } from '@material-ui/lab';
 
 const HomePage = () => {
   const dispatch = useDispatch();

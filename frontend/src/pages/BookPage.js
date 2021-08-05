@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import books from '../books';
 import Spinner from '../components/Spinner';
 import Message from '../components/Message';
 import { listBookDetails } from '../actions/bookActions';

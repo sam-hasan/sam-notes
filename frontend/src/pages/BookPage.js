@@ -3,12 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import Spinner from '../components/Spinner';
 import Message from '../components/Message';
 import { listBookDetails } from '../actions/bookActions';
-import { Container } from '@material-ui/core';
+import { Container, CircularProgress } from '@material-ui/core';
 
 const BookPage = ({ match }) => {
   const dispatch = useDispatch();
   const bookDetails = useSelector((state) => state.bookDetails);
   const { loading, error, book } = bookDetails;
+  const topQuotes = useSelector((state) => state.bookDetails.book.topQuotes);
 
   useEffect(() => {
     dispatch(listBookDetails(match.params.id));
@@ -66,11 +67,13 @@ const BookPage = ({ match }) => {
               My Top Three Quotes
             </h1>
             <ul className="list-disc list-outside font-serif text-gray-900 text-justify">
-              {book && book.length > 0
-                ? book.map((li) => {
-                    return <li key={li}>{li}</li>;
-                  })
-                : 'Loading...'}
+              {topQuotes && topQuotes.length > 0 ? (
+                topQuotes.map((li) => {
+                  return <li key={li}>{li}</li>;
+                })
+              ) : (
+                <CircularProgress />
+              )}
             </ul>
           </div>
         </Container>

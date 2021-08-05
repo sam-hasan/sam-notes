@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -8,6 +9,11 @@ const bookRouter = require('./routes/bookRoutes');
 const userRouter = require('./routes/userRoutes');
 
 const app = express();
+
+app.use(cors());
+
+// for options like PATCH, DELETE, PUT etc requests
+app.options('*', cors());
 
 // Development logging
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));

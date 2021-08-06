@@ -24,6 +24,7 @@ app.use(express.urlencoded({ extended: true, limit: '10kb' })); //to parse data 
 
 // api routes
 app.use('/api/v1/books', bookRouter);
+app.use('/api/v1/users', userRouter);
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server`, 404));

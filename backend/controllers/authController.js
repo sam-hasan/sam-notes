@@ -26,22 +26,56 @@ const createSendToken = (user, statusCode, req, res) => {
   user.password = undefined;
 
   res.status(statusCode).json({
-    status: 'success',
+    _id: user._id,
+    name: user.name,
+    email: user.email,
+    role: user.role,
+    photo: user.photo,
     token,
-    data: {
-      user,
-    },
   });
 };
 
+// filtering out unwanted fields in the body
+const filterObj = (obj, ...allowedFields) => {
+  const newObj = {};
+  Object.keys(obj).forEach((el) => {
+    if (allowedFields.includes(el)) newObj[el] = obj[el];
+  });
+  return newObj;
+};
+
+exports.updateUserProfile = catchAsync(async (req, res, next) => {
+  // 1) Create error if the user POSTs password data
+  if (req.body.password || req.body.passwordConfirm) {
+    return next(
+      new AppError(
+        'This route is not for password updates. Please use /updateMyPassword.',
+        400
+      )
+    );
+  }
+
+  // 2) Filtered out unwanted fields names that are not allowed to be updated
+  const filteredBody = filterObj(req.body, 'name', 'email');
+  // if (req.file) filteredBody.photo = req.file.filename;
+
+  // 3) Update user document
+  const updatedUser = await User.findByIdAndUpdate(req.user._id, filteredBody, {
+    new: true,
+    runValidators: true,
+  });
+
+  createSendToken(updatedUser, 200, req, res);
+});
+
 exports.signup = catchAsync(async (req, res, next) => {
-  const { name, email, password, passwordConfirm, role } = req.body;
+  const { name, email, password, role } = req.body;
 
   const newUser = await User.create({
     name,
     email,
     password,
-    passwordConfirm,
+    // passwordConfirm,
     role,
   });
 
@@ -69,6 +103,11 @@ exports.login = catchAsync(async (req, res, next) => {
   // 3) If no error, send the token to the client
   createSendToken(user, 200, req, res);
 });
+
+exports.logout = (req, res) => {
+  res.clearCookie('jwt');
+  res.status(200).json({ status: 'success' });
+};
 
 exports.protect = catchAsync(async (req, res, next) => {
   // 1) Getting token and checking if it exists

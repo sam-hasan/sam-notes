@@ -4,6 +4,9 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import BookPage from './pages/BookPage';
+import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
+import ProfilePage from './pages/ProfilePage';
 
 const App = () => {
   return (
@@ -11,8 +14,11 @@ const App = () => {
       <Header />
       <main>
         <div className="flex flex-wrap justify-center align-start mt-12 mb-20">
+          <Route path="/signup" component={SignupPage} />
+          <Route path="/login" component={LoginPage} />
+          <Route path="/profile" component={ProfilePage} />
+          <Route path="/book/:id" component={BookPage} />
           <Route path="/" component={HomePage} exact />
-          <Route path="/book/:id" component={BookPage} exact />
         </div>
       </main>
       <Footer />

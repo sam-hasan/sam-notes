@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
   },
   photo: {
     type: String,
-    default: 'default.jpeg',
+    default: '/images/users/default.jpeg',
   },
   role: {
     type: String,
@@ -30,17 +30,17 @@ const userSchema = new mongoose.Schema({
     minLength: 8,
     select: false,
   },
-  passwordConfirm: {
-    type: String,
-    required: [true, 'Please confirm your password'],
-    validate: {
-      // This will ONLY work on SAVE and CREATE!!!!!! .save(), .create() i mean
-      validator: function (el) {
-        return el === this.password; // abc === abc
-      },
-      message: 'Passwords do not match!',
-    },
-  },
+  // passwordConfirm: {
+  //   type: String,
+  //   required: [true, 'Please confirm your password'],
+  //   validate: {
+  //     // This will ONLY work on SAVE and CREATE!!!!!! .save(), .create() i mean
+  //     validator: function (el) {
+  //       return el === this.password; // abc === abc
+  //     },
+  //     message: 'Passwords do not match!',
+  //   },
+  // },
   active: {
     type: Boolean,
     default: true,

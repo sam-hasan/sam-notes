@@ -7,20 +7,24 @@ const users = [
     password: bcrypt.hashSync('test1234', 10),
     role: 'admin',
     active: true,
-    photo: 'user-1.jpeg',
+    photo: '/images/users/user-1.jpeg',
+  },
+  {
+    name: 'Jane Austen',
+    email: 'jane@example.com',
+    password: bcrypt.hashSync('test1234', 10),
+    role: 'user',
+    active: true,
+    photo: '/images/users/user-2.jpeg',
+  },
+  {
+    name: 'Jaime Lannister',
+    email: 'jaime@example.com',
+    password: bcrypt.hashSync('test1234', 10),
+    role: 'user',
+    active: true,
+    photo: '/images/users/user-3.jpeg',
   },
 ];
-
-// const users = [
-//   {
-//     name: 'Sam Hasan',
-//     email: 'admin@example.com',
-//     password: 'test1234',
-//     passwordConfirm: 'test1234',
-//     role: 'admin',
-//     active: true,
-//     photo: 'user-1.jpeg',
-//   },
-// ];
 
 module.exports = users;

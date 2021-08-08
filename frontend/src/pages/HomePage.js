@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Book from '../components/Book';
 import Message from '../components/Message';
-import Spinner from '../components/Spinner';
 import { listBooks } from '../actions/bookActions';
+import { CircularProgress } from '@material-ui/core';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ const HomePage = () => {
   return (
     <>
       {loading ? (
-        <Spinner />
+        <CircularProgress />
       ) : error ? (
         <Message severity="error">{error}</Message>
       ) : (

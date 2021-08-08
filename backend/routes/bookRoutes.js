@@ -1,4 +1,5 @@
 const express = require('express');
+const { protect } = require('../controllers/authController');
 const { getAllBooks, getBook } = require('../controllers/bookController');
 
 const router = express.Router();

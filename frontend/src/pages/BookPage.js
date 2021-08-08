@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Spinner from '../components/Spinner';
 import Message from '../components/Message';
 import { listBookDetails } from '../actions/bookActions';
 import { Container, CircularProgress } from '@material-ui/core';
@@ -19,14 +18,14 @@ const BookPage = ({ match }) => {
     // conditional rendering
     <div className="w-6/12 justify-center items-center antialiased">
       {loading ? (
-        <Spinner />
+        <CircularProgress />
       ) : error ? (
         <Message severity="error">{error}</Message>
       ) : (
         <Container>
           <div className="flex pb-20">
             <div className="mr-8 w-4/12">
-              <img src={book.image}></img>
+              <img alt={book.title} src={book.image}></img>
             </div>
             <div className="text-4xl m-auto text-indigo-900">
               {book.title} by {book.author}

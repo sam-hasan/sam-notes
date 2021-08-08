@@ -31,13 +31,13 @@ const importData = async () => {
     await Book.deleteMany();
     await User.deleteMany();
 
-    // const createdUsers = await User.insertMany(users);
-    // const adminUser = createdUsers[0]._id;
-    // // this is for embedding the admin user to each and every Book document in the database
-    // const sampleBooks = books.map((book) => {
-    //   return { ...book, user: adminUser };
-    // });
-    await Book.insertMany(books);
+    const createdUsers = await User.insertMany(users);
+    const adminUser = createdUsers[0]._id;
+    // this is for embedding the admin user to each and every Book document in the database
+    const sampleBooks = books.map((book) => {
+      return { ...book, user: adminUser };
+    });
+    await Book.insertMany(sampleBooks);
     // await Book.insertMany(books);
     console.log('Data Imported!');
 

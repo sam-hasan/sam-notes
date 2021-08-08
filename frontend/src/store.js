@@ -2,13 +2,30 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { bookListReducer, bookDetailsReducers } from './reducers/bookReducers';
+import {
+  userDetailsReducer,
+  userLoginReducer,
+  userSignupReducer,
+  userUpdateProfileReducer,
+} from './reducers/userReducers';
+import Cookies from 'js-cookie';
 
 const reducer = combineReducers({
   bookList: bookListReducer,
   bookDetails: bookDetailsReducers,
+  userLogin: userLoginReducer,
+  userSignup: userSignupReducer,
+  userDetails: userDetailsReducer,
+  userUpdateProfile: userUpdateProfileReducer,
 });
 
-const initialState = {};
+const userInfoFromCookies = Cookies.get('userInfo')
+  ? JSON.parse(Cookies.get('userInfo'))
+  : null;
+
+const initialState = {
+  userLogin: { userInfo: userInfoFromCookies },
+};
 
 const middleware = [thunk];
 

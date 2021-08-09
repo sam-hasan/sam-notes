@@ -16,7 +16,7 @@ const Book = ({ book }) => {
       </div>
       <div className="flex-auto pl-6">
         <div className="flex flex-wrap items-baseline">
-          <h1 className="w-full flex-none font-semibold mb-2.5 text-xl text-purple-800">
+          <h1 className="w-full flex-none font-semibold mb-2.5 text-xl text-purple-600">
             {book.title}
           </h1>
 

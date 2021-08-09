@@ -70,7 +70,7 @@ const SignUpPage = ({ history, location }) => {
                   name="firstname"
                   id="firstname"
                   placeholder="First name"
-                  className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                  className="w-full px-3 py-3 placeholder-gray-300 bg-gray-100 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
                   onChange={(e) => setFirstname(e.target.value)}
                   required
                 />
@@ -87,7 +87,7 @@ const SignUpPage = ({ history, location }) => {
                   name="lastname"
                   id="lastname"
                   placeholder="Last name"
-                  className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                  className="w-full px-3 py-3 placeholder-gray-300 bg-gray-100 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
                   onChange={(e) => setLastname(e.target.value)}
                   required
                 />
@@ -105,7 +105,7 @@ const SignUpPage = ({ history, location }) => {
                 name="email"
                 id="email"
                 placeholder="Email address"
-                className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                className="w-full px-3 py-3 placeholder-gray-300 bg-gray-100 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
@@ -124,7 +124,7 @@ const SignUpPage = ({ history, location }) => {
                 name="password"
                 id="password"
                 placeholder="Your Password"
-                className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                className="w-full px-3 py-3 placeholder-gray-300 bg-gray-100 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
@@ -142,7 +142,7 @@ const SignUpPage = ({ history, location }) => {
                 name="confirmpassword"
                 id="confirmpassword"
                 placeholder="Confirm password"
-                className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                className="w-full px-3 py-3 placeholder-gray-300 bg-gray-100 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
               />
@@ -151,7 +151,7 @@ const SignUpPage = ({ history, location }) => {
             <div className="mb-6">
               <button
                 type="submit"
-                className="w-full px-3 py-4 text-white bg-purple-700 rounded-md focus:bg-indigo-600 focus:outline-none"
+                className="w-full px-3 py-4 text-white bg-purple-600 rounded-md transform hover:scale-105 focus:scale-100 motion-reduce:transform-none duration-300 focus:outline-none"
               >
                 Sign up
               </button>
@@ -160,7 +160,7 @@ const SignUpPage = ({ history, location }) => {
               Already have an account?{' '}
               <Link
                 to={redirect ? `/login?redirect=${redirect}` : '/login'}
-                className="text-purple-700 focus:outline-none focus:underline focus:text-purple-700 dark:focus:border-indigo-800"
+                className="text-purple-600 focus:outline-none focus:underline focus:text-purple-600 dark:focus:border-indigo-800"
               >
                 Log in
               </Link>

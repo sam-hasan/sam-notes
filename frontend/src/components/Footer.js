@@ -3,12 +3,12 @@ import React from 'react';
 const Footer = () => {
   return (
     <>
-      <div className="w-screen px-4 py-12 mx-auto space-y-8 overflow-hidden bg-purple-700 sm:px-6 lg:px-8 antialiased">
+      <div className="w-screen px-4 py-12 mx-auto space-y-8 overflow-hidden bg-purple-600 sm:px-6 lg:px-8 antialiased">
         <nav className="flex flex-wrap justify-center -mx-5 -my-2">
           <div className="px-5 py-2">
             <a
               href="#"
-              className="text-base leading-6 text-white hover:text-gray-900"
+              className="text-base leading-6 text-white hover:text-gray-300"
             >
               About
             </a>
@@ -16,7 +16,7 @@ const Footer = () => {
           <div className="px-5 py-2">
             <a
               href="#"
-              className="text-base leading-6 text-white hover:text-gray-900"
+              className="text-base leading-6 text-white hover:text-gray-300"
             >
               Blog
             </a>
@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="px-5 py-2">
             <a
               href="#"
-              className="text-base leading-6 text-white hover:text-gray-900"
+              className="text-base leading-6 text-white hover:text-gray-300"
             >
               Team
             </a>
@@ -32,7 +32,7 @@ const Footer = () => {
           <div className="px-5 py-2">
             <a
               href="#"
-              className="text-base leading-6 text-white hover:text-gray-900"
+              className="text-base leading-6 text-white hover:text-gray-300"
             >
               Pricing
             </a>
@@ -40,7 +40,7 @@ const Footer = () => {
           <div className="px-5 py-2">
             <a
               href="#"
-              className="text-base leading-6 text-white hover:text-gray-900"
+              className="text-base leading-6 text-white hover:text-gray-300"
             >
               Contact
             </a>

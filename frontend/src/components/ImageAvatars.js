@@ -16,4 +16,8 @@ export default makeStyles((theme) => ({
     width: theme.spacing(6),
     height: theme.spacing(6),
   },
+  extraLarge: {
+    width: theme.spacing(27),
+    height: theme.spacing(27),
+  },
 }));

@@ -4,6 +4,15 @@ const { promisify } = require('util');
 const AppError = require('../utils/appError');
 const User = require('../models/userModel');
 
+// filtering out unwanted fields in the body
+const filterObj = (obj, ...allowedFields) => {
+  const newObj = {};
+  Object.keys(obj).forEach((el) => {
+    if (allowedFields.includes(el)) newObj[el] = obj[el];
+  });
+  return newObj;
+};
+
 // the signing token function
 const signToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -35,15 +44,7 @@ const createSendToken = (user, statusCode, req, res) => {
   });
 };
 
-// filtering out unwanted fields in the body
-const filterObj = (obj, ...allowedFields) => {
-  const newObj = {};
-  Object.keys(obj).forEach((el) => {
-    if (allowedFields.includes(el)) newObj[el] = obj[el];
-  });
-  return newObj;
-};
-
+// update user profile
 exports.updateUserProfile = catchAsync(async (req, res, next) => {
   // 1) Create error if the user POSTs password data
   if (req.body.password || req.body.passwordConfirm) {
@@ -75,11 +76,10 @@ exports.signup = catchAsync(async (req, res, next) => {
     name,
     email,
     password,
-    // passwordConfirm,
     role,
   });
 
-  //   if the new user is created, send the data as response
+  // if the new user is created, send the data as response
   createSendToken(newUser, 201, req, res);
 });
 

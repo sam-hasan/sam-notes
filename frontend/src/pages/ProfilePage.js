@@ -86,7 +86,7 @@ const ProfilePage = ({ location, history }) => {
       {/* Profile settings container */}
       <div className="w-6/12 flex flex-col">
         <h1 className="pb-4 font-semibold text-purple-600 text-xl uppercase">
-          Your Profile Settings
+          Update Profile Settings
         </h1>
         {/* {message && <Message severity="error">{error}</Message>} */}
         {userUpdateProfile.error && (
@@ -144,7 +144,7 @@ const ProfilePage = ({ location, history }) => {
               type="submit"
               className="w-1/4 px-3 py-3 text-white uppercase bg-purple-600 rounded-md focus:outline-none transform hover:scale-105 focus:scale-100 motion-reduce:transform-none duration-300"
             >
-              Save
+              Update
             </button>
           </div>
         </form>

@@ -6,3 +6,9 @@
 main {
   min-height: 80vh;
 }
+
+ion-icon {
+  color: #fff;
+  font-size: 32px;
+  --ionicon-stroke-width: 16px;
+}

@@ -7,6 +7,8 @@ import BookPage from './pages/BookPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import ProfilePage from './pages/ProfilePage';
+import UserEditPage from './pages/UserEditPage';
+import UserListPage from './pages/UserListPage';
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
           <Route path="/login" component={LoginPage} />
           <Route path="/profile" component={ProfilePage} />
           <Route path="/book/:id" component={BookPage} />
+          <Route path="/admin/userList" component={UserListPage} />
+          <Route path="/admin/user/:id/edit" component={UserEditPage} />
           <Route path="/" component={HomePage} exact />
         </div>
       </main>

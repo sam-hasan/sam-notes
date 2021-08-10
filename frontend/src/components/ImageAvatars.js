@@ -20,4 +20,10 @@ export default makeStyles((theme) => ({
     width: theme.spacing(27),
     height: theme.spacing(27),
   },
+  root: {
+    display: 'flex',
+  },
+  paper: {
+    marginRight: theme.spacing(2),
+  },
 }));

@@ -13,7 +13,7 @@ exports.getUserProfile = catchAsync(async (req, res, next) => {
 });
 
 exports.getAllUsers = catchAsync(async (req, res, next) => {
-  const users = await User.find({});
+  const users = await User.find({}).select('+active');
 
   res.status(200).json(users);
 });

@@ -7,6 +7,9 @@ import {
   userLoginReducer,
   userSignupReducer,
   userUpdateProfileReducer,
+  userListReducer,
+  userDeleteReducer,
+  userUpdateReducer,
 } from './reducers/userReducers';
 import Cookies from 'js-cookie';
 
@@ -17,6 +20,9 @@ const reducer = combineReducers({
   userSignup: userSignupReducer,
   userDetails: userDetailsReducer,
   userUpdateProfile: userUpdateProfileReducer,
+  userList: userListReducer,
+  userDelete: userDeleteReducer,
+  userUpdate: userUpdateReducer,
 });
 
 const userInfoFromCookies = Cookies.get('userInfo')

@@ -14,7 +14,6 @@ import {
   Button,
 } from '@material-ui/core';
 import makeStyles from '../components/ImageAvatars';
-import ArrowDropDownOutlinedIcon from '@material-ui/icons/ArrowDropDownOutlined';
 
 const Header = () => {
   const classes = makeStyles();

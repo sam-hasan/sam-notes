@@ -125,30 +125,22 @@ exports.protect = catchAsync(async (req, res, next) => {
       new AppError('You are not logged in. Please log in to get access', 401)
     );
   }
+
   // 2) Verify if the token is valid or not (if the payload has been manipulated by a malicious third party )
   // most tutorials would stop here but it wouldnt be secure enough
-  const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
-  // console.log(decoded); returns an object like { id: '60af6b7a6c9fd20ce30c4396', iat: 1622109063, exp: 1629885063 }
+  // const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+  const decoded = await jwt.verify(token, process.env.JWT_SECRET);
+  // returns an object like { id: '60af6b7a6c9fd20ce30c4396', iat: 1622109063, exp: 1629885063 }
 
   // 3) Check if a user with that id (from the token) exists
-  const currentUser = await User.findById(decoded.id);
+  const currentUser = await User.findById(decoded.id).select('-password');
 
   if (!currentUser) {
     return next(
       new AppError('The user belonging to this token no longer exists.', 401)
     );
   }
-
-  // 4) Check if user changed password after the token was issued
-  //   if (currentUser.changedPasswordAfter(decoded.iat)) {
-  //     return next(
-  //       new AppError('User recently changed password! Please log in again', 401)
-  //     );
-  //   }
-
   req.user = currentUser;
-  res.locals.user = currentUser;
-  // only when all of the above tests pass, go to the next middleware (grant access to the protected route)
   next();
 });
 

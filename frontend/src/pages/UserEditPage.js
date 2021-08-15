@@ -5,13 +5,14 @@ import { getUserDetails, updateUser } from '../actions/userActions';
 import { USER_UPDATE_RESET } from '../constants/userConstants';
 import { CircularProgress, Container } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+// import e from 'express';
 
 const UserEditPage = ({ match, history }) => {
   const userId = match.params.id;
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [admin, setAdmin] = useState('user');
+  const [role, setRole] = useState('user');
 
   const dispatch = useDispatch();
 
@@ -36,14 +37,14 @@ const UserEditPage = ({ match, history }) => {
       } else {
         setName(user.name);
         setEmail(user.email);
-        setAdmin(user.role);
+        setRole(user.role);
       }
     }
   }, [dispatch, history, userId, user, successUpdate]);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(updateUser({ _id: userId, name, email, admin }));
+    dispatch(updateUser({ _id: userId, name, email, role }));
   };
 
   return (
@@ -113,6 +114,26 @@ const UserEditPage = ({ match, history }) => {
                       required
                       onChange={(e) => setEmail(e.target.value)}
                     />
+                  </div>
+                  <div className="mb-6 flex flex-col">
+                    <label
+                      for="roles"
+                      className="block mb-2 text-left text-sm text-gray-600 dark:text-gray-400"
+                    >
+                      Role
+                    </label>
+                    <div className="self-start">
+                      <select
+                        id="roles"
+                        name="roles"
+                        className="text-sm"
+                        value={role}
+                        onChange={(e) => setRole(e.target.value)}
+                      >
+                        <option value="user">user</option>
+                        <option value="admin">admin</option>
+                      </select>
+                    </div>
                   </div>
                   <div className="mb-6">
                     <button

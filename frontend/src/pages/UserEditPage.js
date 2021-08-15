@@ -48,18 +48,19 @@ const UserEditPage = ({ match, history }) => {
 
   return (
     <div className="container mx-auto antialiased">
-      <div className="max-w-md mx-auto mt-10">
+      <div>
+        <Link to="/admin/userlist">
+          <ion-icon
+            name="chevron-back-outline"
+            style={{
+              color: 'rgba(124, 58, 237)',
+              fontSize: '40px',
+            }}
+          ></ion-icon>
+        </Link>
+      </div>
+      <div className="max-w-xl mx-auto mt-10">
         <div className="text-center">
-          <Link to="/admin/userlist">
-            <ion-icon
-              name="chevron-back-outline"
-              className=""
-              style={{
-                color: 'rgba(124, 58, 237)',
-                fontSize: '24px',
-              }}
-            ></ion-icon>
-          </Link>
           <h1 className="mt-3 text-3xl font-semibold text-gray-700 dark:text-gray-200">
             Edit User
           </h1>

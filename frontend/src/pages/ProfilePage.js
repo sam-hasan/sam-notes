@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { Avatar, Box, CircularProgress } from '@material-ui/core';
 import makeStyles from '../components/ImageAvatars';
@@ -12,11 +13,13 @@ const ProfilePage = ({ location, history }) => {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [photo, setPhoto] = useState('');
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [message, setMessage] = useState(null);
   const [profileUpdated, setProfileUpdated] = useState(false);
+  const [uploading, setUploading] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -46,17 +49,40 @@ const ProfilePage = ({ location, history }) => {
         return;
       }
       setName(user.name);
+      setPhoto(user.photo);
       setEmail(user.email);
     }
   }, [dispatch, history, userInfo, user, success]);
 
+  const uploadFileHandler = async (e) => {
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append('image', file);
+    setUploading(true);
+
+    try {
+      const config = {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      };
+
+      const { data } = await axios.post('/api/v1/upload', formData, config);
+
+      setPhoto(data);
+      setUploading(false);
+    } catch (error) {
+      console.error(error);
+      setUploading(false);
+    }
+  };
+
   const profileSubmitHandler = (e) => {
     e.preventDefault();
-    // you can also set the following in submitHandler to get rid of the previous errors or profile update messages
-    // get rid of previous messages
+
     setProfileUpdated(false);
     setMessage(null);
-    dispatch(updateUserProfile({ id: user._id, name, email }));
+    dispatch(updateUserProfile({ id: user._id, name, email, photo }));
   };
 
   const passwordSubmitHandler = (e) => {
@@ -78,7 +104,7 @@ const ProfilePage = ({ location, history }) => {
           className={classes.extraLarge}
         />
 
-        <div className="text-2xl text-center text-purple-600 font-semibold pt-10 uppercase">
+        <div className="self-center text-2xl text-center text-purple-600 font-semibold pt-3 uppercase">
           {userInfo.name}
         </div>
       </Box>
@@ -139,7 +165,22 @@ const ProfilePage = ({ location, history }) => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="pt-5">
+
+          <div className="mb-4">
+            <label
+              for="image"
+              className="text-purple text-sm text-purple-600 transform underline leading-8 py-1 px-1 cursor-pointer hover:shadow-lg hover:bg-purple-600 hover:text-white duration-300"
+            >
+              Choose new photo
+            </label>
+            <input
+              type="file"
+              name="image"
+              id="image"
+              onChange={uploadFileHandler}
+            />
+          </div>
+          <div>
             <button
               type="submit"
               className="w-1/4 px-3 py-3 text-white uppercase bg-purple-600 rounded-md focus:outline-none transform hover:scale-105 focus:scale-100 motion-reduce:transform-none duration-300"
@@ -209,6 +250,7 @@ const ProfilePage = ({ location, history }) => {
                 onChange={(e) => setPasswordConfirm(e.target.value)}
               />
             </div>
+
             <div className="pt-5">
               <button
                 type="submit"

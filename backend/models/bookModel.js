@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const commentSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
+    photo: { type: String },
     comment: { type: String, required: true },
     user: {
       type: mongoose.Schema.Types.ObjectId,
@@ -25,7 +26,6 @@ const bookSchema = new mongoose.Schema(
     title: {
       type: String,
       required: [true, 'A book must have a title'],
-      unique: true,
       trim: true,
     },
     slug: String,

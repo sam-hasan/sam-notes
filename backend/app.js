@@ -8,6 +8,7 @@ const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const bookRouter = require('./routes/bookRoutes');
 const userRouter = require('./routes/userRoutes');
+const uploadRouter = require('./routes/uploadRoutes');
 
 const app = express();
 
@@ -26,6 +27,9 @@ app.use(cookieParser());
 // api routes
 app.use('/api/v1/books', bookRouter);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/upload', uploadRouter);
+
+app.use('/uploads', express.static(path.join(path.resolve(), '/uploads')));
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server`, 404));

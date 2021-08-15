@@ -1,4 +1,3 @@
-import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
@@ -19,9 +18,6 @@ export default makeStyles((theme) => ({
   extraLarge: {
     width: theme.spacing(27),
     height: theme.spacing(27),
-  },
-  root: {
-    display: 'flex',
   },
   paper: {
     marginRight: theme.spacing(2),

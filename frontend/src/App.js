@@ -9,6 +9,8 @@ import SignupPage from './pages/SignupPage';
 import ProfilePage from './pages/ProfilePage';
 import UserEditPage from './pages/UserEditPage';
 import UserListPage from './pages/UserListPage';
+import BookListPage from './pages/BookListPage';
+import BookEditPage from './pages/BookEditPage';
 
 const App = () => {
   return (
@@ -22,6 +24,9 @@ const App = () => {
           <Route path="/book/:id" component={BookPage} />
           <Route path="/admin/userList" component={UserListPage} />
           <Route path="/admin/user/:id/edit" component={UserEditPage} />
+          <Route path="/admin/booklist" component={BookListPage} />
+          <Route path="/admin/book/:id/edit" component={BookEditPage} />
+
           <Route path="/" component={HomePage} exact />
         </div>
       </main>

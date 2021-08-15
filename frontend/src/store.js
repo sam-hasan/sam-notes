@@ -1,7 +1,14 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { bookListReducer, bookDetailsReducers } from './reducers/bookReducers';
+import {
+  bookListReducer,
+  bookDetailsReducers,
+  bookDeleteReducer,
+  bookCreateReducer,
+  bookUpdateReducer,
+  bookCommentCreateReducer,
+} from './reducers/bookReducers';
 import {
   userDetailsReducer,
   userLoginReducer,
@@ -16,6 +23,10 @@ import Cookies from 'js-cookie';
 const reducer = combineReducers({
   bookList: bookListReducer,
   bookDetails: bookDetailsReducers,
+  bookDelete: bookDeleteReducer,
+  bookCreate: bookCreateReducer,
+  bookUpdate: bookUpdateReducer,
+  bookCommentCreate: bookCommentCreateReducer,
   userLogin: userLoginReducer,
   userSignup: userSignupReducer,
   userDetails: userDetailsReducer,

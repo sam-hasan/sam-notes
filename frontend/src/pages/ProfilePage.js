@@ -90,7 +90,7 @@ const ProfilePage = ({ location, history }) => {
   };
 
   return (
-    <div className="w-7/12 pt-10 pb-10 flex justify-between antialiased">
+    <div className="w-7/12 pt-10 pb-10 flex justify-between antialiased mt-12 mb-20">
       {/* Avatar and name container */}
       <Box
         display="flex"
@@ -104,14 +104,14 @@ const ProfilePage = ({ location, history }) => {
           className={classes.extraLarge}
         />
 
-        <div className="self-center text-2xl text-center text-purple-600 font-semibold pt-3 uppercase">
+        <div className="self-center text-2xl text-center text-gradient font-semibold pt-6 uppercase">
           {userInfo.name}
         </div>
       </Box>
 
       {/* Profile settings container */}
       <div className="w-6/12 flex flex-col">
-        <h1 className="pb-4 font-semibold text-purple-600 text-xl uppercase">
+        <h1 className="pb-4 font-semibold text-gradient text-xl uppercase">
           Update Profile Settings
         </h1>
         {/* {message && <Message severity="error">{error}</Message>} */}
@@ -169,7 +169,7 @@ const ProfilePage = ({ location, history }) => {
           <div className="mb-4">
             <label
               for="image"
-              className="text-purple text-sm text-purple-600 transform underline leading-8 py-1 px-1 cursor-pointer hover:shadow-lg hover:bg-purple-600 hover:text-white duration-300"
+              className="text-purple text-sm text-gradient transform underline leading-8 py-1 px-1 cursor-pointer hover:shadow-lg hover:bg-purple-600 hover:text-white duration-300"
             >
               Choose new photo
             </label>
@@ -191,7 +191,7 @@ const ProfilePage = ({ location, history }) => {
         </form>
         {/* Password change container */}
         <div className="pt-20 flex flex-col">
-          <h1 className="pb-4 font-semibold text-purple-600 text-xl uppercase">
+          <h1 className="pb-4 font-semibold text-gradient text-xl uppercase">
             Reset Password
           </h1>
           <form onSubmit={passwordSubmitHandler}>

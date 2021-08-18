@@ -13,17 +13,23 @@ const HomePage = () => {
 
   useEffect(() => {
     dispatch(listBooks());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
-      {loading ? (
-        <CircularProgress />
-      ) : error ? (
-        <Message severity="error">{error}</Message>
-      ) : (
-        books.map((book) => <Book key={book.title} book={book}></Book>)
-      )}
+      <div className="text-3xl font-semibold flex justify-center antialiased pt-28 m-auto">
+        <div style={{ fontFamily: 'Cinzel' }}>Reviews</div>
+      </div>
+      <div className="flex flex-wrap justify-center align-start mt-12 mb-20">
+        {loading ? (
+          <CircularProgress />
+        ) : error ? (
+          <Message severity="error">{error}</Message>
+        ) : (
+          books.map((book) => <Book key={book.title} book={book}></Book>)
+        )}
+      </div>
+      );
     </>
   );
 };

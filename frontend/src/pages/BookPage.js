@@ -27,6 +27,7 @@ const BookPage = ({ match }) => {
   } = bookCommentCreate;
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (successBookComment) {
       setComment('');
     }
@@ -34,7 +35,7 @@ const BookPage = ({ match }) => {
       dispatch(listBookDetails(match.params.id));
       dispatch({ type: BOOK_CREATE_COMMENT_RESET });
     }
-  }, [dispatch, match, successBookComment]);
+  }, [dispatch, match, successBookComment, book._id]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -47,7 +48,7 @@ const BookPage = ({ match }) => {
 
   return (
     // conditional rendering
-    <div className="w-7/12 justify-center items-center antialiased">
+    <div className="w-7/12 justify-center items-center antialiased mt-12 mb-20">
       {loading ? (
         <CircularProgress />
       ) : error ? (
@@ -58,42 +59,42 @@ const BookPage = ({ match }) => {
             <div className="w-4/12">
               <img alt={book.title} src={book.image}></img>
             </div>
-            <div className="text-3xl ml-4 font-semibold m-auto text-purple-600">
+            <div className="text-3xl ml-4 font-semibold m-auto text-gradient">
               {book.title} by {book.author}
             </div>
           </div>
 
           {/* The book in three sentences */}
           <div className="pb-16">
-            <h1 className="text-2xl pb-6 font-semibold text-purple-600">
+            <h1 className="text-2xl pb-6 font-semibold text-gradient">
               The Book In Three Sentences
             </h1>
             <p className="font-serif text-gray-900">{book.topSentences}</p>
           </div>
           {/* impressions */}
           <div className="pb-16">
-            <h1 className="text-2xl pb-6 font-semibold text-purple-600">
+            <h1 className="text-2xl pb-6 font-semibold text-gradient">
               How I Discovered It
             </h1>
             <p className="font-serif text-gray-900">{book.impressions}</p>
           </div>
           {/* recommended for */}
           <div className="pb-16">
-            <h1 className="text-2xl pb-6 font-semibold text-purple-600">
+            <h1 className="text-2xl pb-6 font-semibold text-gradient">
               Who Should Read It
             </h1>
             <p className="font-serif text-gray-900">{book.recommendedFor}</p>
           </div>
           {/* how the book changed me */}
           <div className="pb-16">
-            <h1 className="text-2xl pb-6 font-semibold text-purple-600">
+            <h1 className="text-2xl pb-6 font-semibold text-gradient">
               How The Book Changed Me
             </h1>
             <p className="font-serif text-gray-900">{book.influence}</p>
           </div>
           {/* top quotes */}
           <div className="pb-32">
-            <h1 className="text-2xl pb-6 font-semibold text-purple-600">
+            <h1 className="text-2xl pb-6 font-semibold text-gradient">
               My Top Three Quotes
             </h1>
             <ul className="list-disc list-outside font-serif text-gray-900 text-justify">

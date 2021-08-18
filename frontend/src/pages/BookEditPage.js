@@ -100,7 +100,7 @@ const BookEditPage = ({ match, history }) => {
   };
 
   return (
-    <div className="container mx-auto antialiased">
+    <div className="container mx-auto antialiased mt-12 mb-20">
       <Link to="/admin/booklist">
         <ion-icon
           name="chevron-back-outline"

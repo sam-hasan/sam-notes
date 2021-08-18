@@ -32,10 +32,10 @@ const UserListPage = ({ history }) => {
   };
 
   return (
-    <div class="container mx-auto px-4 sm:px-8 antialiased text-xl">
+    <div class="container mx-auto px-4 sm:px-8 antialiased text-xl mt-12 mb-20">
       <div class="pb-6 pt-3">
         <div className="ml-7">
-          <h2 class="font-semibold pb-4 text-purple-600 text-2xl uppercase">
+          <h2 class="font-semibold pb-4 text-gradient text-2xl uppercase">
             Users
           </h2>
         </div>

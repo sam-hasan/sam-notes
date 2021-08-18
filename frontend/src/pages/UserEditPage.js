@@ -48,7 +48,7 @@ const UserEditPage = ({ match, history }) => {
   };
 
   return (
-    <div className="container mx-auto antialiased">
+    <div className="container mx-auto antialiased mt-12 mb-20">
       <div>
         <Link to="/admin/userlist">
           <ion-icon

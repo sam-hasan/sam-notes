@@ -11,13 +11,15 @@ import UserEditPage from './pages/UserEditPage';
 import UserListPage from './pages/UserListPage';
 import BookListPage from './pages/BookListPage';
 import BookEditPage from './pages/BookEditPage';
+import Hero from './components/Hero';
+import { Fragment } from 'react';
 
 const App = () => {
   return (
     <Router>
       <Header />
       <main>
-        <div className="flex flex-wrap justify-center align-start mt-12 mb-20">
+        <div className="flex flex-wrap justify-center align-start">
           <Route path="/signup" component={SignupPage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/profile" component={ProfilePage} />
@@ -26,9 +28,17 @@ const App = () => {
           <Route path="/admin/user/:id/edit" component={UserEditPage} />
           <Route path="/admin/booklist" component={BookListPage} />
           <Route path="/admin/book/:id/edit" component={BookEditPage} />
-
-          <Route path="/" component={HomePage} exact />
         </div>
+        <Route
+          path="/"
+          render={() => (
+            <Fragment>
+              <Hero />
+              <HomePage />
+            </Fragment>
+          )}
+          exact
+        />
       </main>
       <Footer />
     </Router>

@@ -53,14 +53,14 @@ const BookListPage = ({ history, match }) => {
   };
 
   return (
-    <div class="container mx-auto px-4 sm:px-8 antialiased text-xl">
+    <div class="container mx-auto px-4 sm:px-8 antialiased text-xl mt-12 mb-20">
       <div class="pb-6">
         {loadingDelete && <CircularProgress />}
         {errorDelete && <Message severity="error">{errorDelete}</Message>}
         {loadingCreate && <CircularProgress />}
         {errorCreate && <Message severity="error">{errorCreate}</Message>}
         <div className="ml-7 flex justify-between items-center">
-          <h2 class="block font-semibold pt-4 pb-4 text-purple-600 text-2xl uppercase">
+          <h2 class="block font-semibold pt-4 pb-4 text-gradient text-2xl uppercase">
             Books
           </h2>
           <div className="mr-7 bg-purple-600 p-2 rounded-md transform hover:scale-105 focus:scale-100 motion-reduce:transform-none duration-300 focus:outline-none">

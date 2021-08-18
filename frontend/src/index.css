@@ -7,13 +7,38 @@ main {
   min-height: 80vh;
 }
 
+body {
+  font-family: 'Cormorant Garamond', serif;
+}
+
 ion-icon {
-  color: #fff;
+  color: #ad1deb;
   font-size: 32px;
   --ionicon-stroke-width: 16px;
+  z-index: 99;
 }
 
 input[type='file'] {
   opacity: 0;
   display: none;
+}
+
+.hero {
+  height: 91vh;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 45%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
+.text-gradient {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: #6617cb;
+  background-image: linear-gradient(315deg, #6617cb 0%, #cb218e 74%);
 }

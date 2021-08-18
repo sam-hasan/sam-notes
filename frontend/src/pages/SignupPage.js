@@ -40,7 +40,7 @@ const SignUpPage = ({ history, location }) => {
     }
   };
   return (
-    <div className="container mx-auto antialiased">
+    <div className="container mx-auto antialiased mt-12 mb-20">
       <div className="max-w-md mx-auto my-10">
         <div className="text-center">
           <h1 className="my-3 text-3xl font-semibold text-gray-700 dark:text-gray-200">
@@ -160,7 +160,7 @@ const SignUpPage = ({ history, location }) => {
               Already have an account?{' '}
               <Link
                 to={redirect ? `/login?redirect=${redirect}` : '/login'}
-                className="text-purple-600 focus:outline-none focus:underline focus:text-purple-600 dark:focus:border-indigo-800"
+                className="text-gradient focus:outline-none focus:underline focus:text-gradient dark:focus:border-indigo-800"
               >
                 Log in
               </Link>

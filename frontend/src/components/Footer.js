@@ -3,74 +3,14 @@ import React from 'react';
 const Footer = () => {
   return (
     <>
-      <div className="w-screen px-4 py-12 mx-auto space-y-8 overflow-hidden bg-purple-600 sm:px-6 lg:px-8 antialiased">
-        <nav className="flex flex-wrap justify-center -mx-5 -my-2">
-          <div className="px-5 py-2">
-            <a
-              href="#"
-              className="text-base leading-6 text-white hover:text-gray-300"
-            >
-              About
-            </a>
-          </div>
-          <div className="px-5 py-2">
-            <a
-              href="#"
-              className="text-base leading-6 text-white hover:text-gray-300"
-            >
-              Blog
-            </a>
-          </div>
-          <div className="px-5 py-2">
-            <a
-              href="#"
-              className="text-base leading-6 text-white hover:text-gray-300"
-            >
-              Team
-            </a>
-          </div>
-          <div className="px-5 py-2">
-            <a
-              href="#"
-              className="text-base leading-6 text-white hover:text-gray-300"
-            >
-              Pricing
-            </a>
-          </div>
-          <div className="px-5 py-2">
-            <a
-              href="#"
-              className="text-base leading-6 text-white hover:text-gray-300"
-            >
-              Contact
-            </a>
-          </div>
-          <div className="px-5 py-2">
-            <a
-              href="#"
-              className="text-base leading-6 text-white hover:text-gray-900"
-            >
-              Terms
-            </a>
-          </div>
-        </nav>
-        <div className="flex justify-center mt-8 space-x-6">
-          <a href="#" className="text-white hover:text-gray-300">
-            <span className="sr-only">Facebook</span>
-            <svg
-              className="w-6 h-6"
-              aria-hidden="true"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fillRule="evenodd"
-                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-          </a>
-          <a href="#" className="text-white hover:text-gray-300">
+      <div className="w-screen px-4 py-12 mx-auto space-y-5 overflow-hidden bg-black sm:px-6 lg:px-8 antialiased">
+        <div className="flex justify-center mt-4 space-x-6">
+          <a
+            href="https://www.instagram.com/sam.hasan17/"
+            target="_blank"
+            rel="noreferrer"
+            className="text-white hover:text-gray-300"
+          >
             <span className="sr-only">Instagram</span>
             <svg
               className="w-6 h-6"
@@ -85,7 +25,12 @@ const Footer = () => {
               ></path>
             </svg>
           </a>
-          <a href="#" className="text-white hover:text-gray-300">
+          <a
+            href="https://twitter.com/sam_hasan17"
+            target="_blank"
+            rel="noreferrer"
+            className="text-white hover:text-gray-300"
+          >
             <span className="sr-only">Twitter</span>
             <svg
               className="w-6 h-6"
@@ -96,7 +41,12 @@ const Footer = () => {
               <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
             </svg>
           </a>
-          <a href="#" className="text-white hover:text-gray-300">
+          <a
+            href="https://github.com/sam-hasan"
+            target="_blank"
+            rel="noreferrer"
+            className="text-white hover:text-gray-300"
+          >
             <span className="sr-only">GitHub</span>
             <svg
               className="w-6 h-6"
@@ -111,19 +61,19 @@ const Footer = () => {
               ></path>
             </svg>
           </a>
-          <a href="#" className="text-white hover:text-gray-300">
-            <span className="sr-only">Dribbble</span>
+          <a
+            href="https://www.goodreads.com/user/show/137643226-sam-hasan"
+            target="_blank"
+            rel="noreferrer"
+            className="text-white hover:text-gray-300"
+          >
             <svg
               className="w-6 h-6"
-              aria-hidden="true"
-              fill="currentColor"
               viewBox="0 0 24 24"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                fillRule="evenodd"
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
-                clipRule="evenodd"
-              ></path>
+              <path d="M19.525 15.977V.49h-2.059v2.906h-.064c-.211-.455-.481-.891-.842-1.307-.36-.412-.767-.777-1.232-1.094-.466-.314-.962-.561-1.519-.736C13.256.09 12.669 0 12.038 0c-1.21 0-2.3.225-3.246.67-.947.447-1.743 1.057-2.385 1.83-.642.773-1.133 1.676-1.47 2.711-.336 1.037-.506 2.129-.506 3.283 0 1.199.141 2.326.425 3.382.286 1.057.737 1.976 1.368 2.762.631.78 1.412 1.397 2.375 1.833.961.436 2.119.661 3.471.661 1.248 0 2.33-.315 3.262-.946s1.638-1.473 2.119-2.525h.061v2.284c0 2.044-.421 3.607-1.264 4.705-.84 1.081-2.224 1.638-4.146 1.638-.572 0-1.128-.061-1.669-.181-.542-.12-1.036-.315-1.487-.57-.437-.271-.827-.601-1.143-1.038-.316-.435-.526-.961-.632-1.593H5.064c.067.887.315 1.654.737 2.3.424.646.961 1.172 1.602 1.593.641.406 1.367.706 2.172.902.811.194 1.639.3 2.494.3 1.383 0 2.541-.195 3.486-.555.947-.376 1.714-.902 2.301-1.608.601-.708 1.021-1.549 1.293-2.556.27-1.007.42-2.134.42-3.367l-.044.062zm-7.484-.557c-.955 0-1.784-.189-2.479-.571-.697-.38-1.277-.882-1.732-1.503-.467-.621-.797-1.332-1.022-2.139s-.332-1.633-.332-2.484c0-.871.105-1.725.301-2.563.21-.84.54-1.587.992-2.24.451-.652 1.037-1.182 1.728-1.584s1.533-.605 2.51-.605 1.803.209 2.495.621c.676.415 1.247.959 1.683 1.634.436.677.751 1.429.947 2.255.195.826.285 1.656.285 2.482 0 .852-.12 1.678-.345 2.484-.226.807-.572 1.518-1.038 2.139-.465.621-1.021 1.123-1.698 1.503-.676.382-1.458.571-2.359.571h.064z" />
             </svg>
           </a>
         </div>

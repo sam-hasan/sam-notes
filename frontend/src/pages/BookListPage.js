@@ -63,7 +63,7 @@ const BookListPage = ({ history, match }) => {
           <h2 class="block font-semibold pt-4 pb-4 text-gradient text-2xl uppercase">
             Books
           </h2>
-          <div className="mr-7 bg-purple-600 p-2 rounded-md transform hover:scale-105 focus:scale-100 motion-reduce:transform-none duration-300 focus:outline-none">
+          <div className="mr-7 bg-pink-600 p-2 rounded-md transform hover:scale-105 focus:scale-100 motion-reduce:transform-none duration-300 focus:outline-none">
             <Button onClick={createBookHandler}>
               <ion-icon
                 name="add"
@@ -87,20 +87,20 @@ const BookListPage = ({ history, match }) => {
                 <table class="min-w-full leading-normal">
                   <thead>
                     <tr>
-                      <th class="px-5 py-4 bg-purple-600 text-left text-sm font-semibold text-white uppercase">
+                      <th class="px-5 py-4 bg-pink-600 text-left text-sm font-semibold text-white uppercase">
                         Title
                       </th>
-                      <th class="px-5 py-4 bg-purple-600 text-left text-sm font-semibold text-white uppercase">
+                      <th class="px-5 py-4 bg-pink-600 text-left text-sm font-semibold text-white uppercase">
                         Author
                       </th>
-                      <th class="px-5 py-4 bg-purple-600 text-left text-sm font-semibold text-white uppercase">
+                      <th class="px-5 py-4 bg-pink-600 text-left text-sm font-semibold text-white uppercase">
                         Genre
                       </th>
-                      <th class="px-5 py-4 bg-purple-600 text-left text-sm font-semibold text-white uppercase">
+                      <th class="px-5 py-4 bg-pink-600 text-left text-sm font-semibold text-white uppercase">
                         ID
                       </th>
-                      <th class="px-5 py-4 bg-purple-600 text-left text-sm font-semibold text-white uppercase"></th>
-                      <th class="px-5 py-4 bg-purple-600 text-left text-sm font-semibold text-white uppercase"></th>
+                      <th class="px-5 py-4 bg-pink-600 text-left text-sm font-semibold text-white uppercase"></th>
+                      <th class="px-5 py-4 bg-pink-600 text-left text-sm font-semibold text-white uppercase"></th>
                     </tr>
                   </thead>
                   {books.map((book) => (

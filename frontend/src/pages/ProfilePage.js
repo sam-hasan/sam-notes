@@ -169,7 +169,7 @@ const ProfilePage = ({ location, history }) => {
           <div className="mb-4">
             <label
               for="image"
-              className="text-purple text-sm text-gradient transform underline leading-8 py-1 px-1 cursor-pointer hover:shadow-lg hover:bg-purple-600 hover:text-white duration-300"
+              className="text-purple text-sm text-gradient transform underline leading-8 py-1 px-1 cursor-pointer hover:shadow-lg hover:bg-pink-600 hover:text-white duration-300"
             >
               Choose new photo
             </label>
@@ -183,7 +183,7 @@ const ProfilePage = ({ location, history }) => {
           <div>
             <button
               type="submit"
-              className="w-1/4 px-3 py-3 text-white uppercase bg-purple-600 rounded-md focus:outline-none transform hover:scale-105 focus:scale-100 motion-reduce:transform-none duration-300"
+              className="w-1/4 px-3 py-3 text-white uppercase bg-pink-600 rounded-md focus:outline-none transform hover:scale-105 focus:scale-100 motion-reduce:transform-none duration-300"
             >
               Update
             </button>
@@ -254,7 +254,7 @@ const ProfilePage = ({ location, history }) => {
             <div className="pt-5">
               <button
                 type="submit"
-                className="w-1/4 px-3 py-3 text-white uppercase bg-purple-600 rounded-md focus:outline-none transform hover:scale-105 focus:scale-100 motion-reduce:transform-none duration-300"
+                className="w-1/4 px-3 py-3 text-white uppercase bg-pink-600 rounded-md focus:outline-none transform hover:scale-105 focus:scale-100 motion-reduce:transform-none duration-300"
               >
                 Change
               </button>

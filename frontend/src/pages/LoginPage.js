@@ -87,7 +87,7 @@ const LoginPage = ({ location, history }) => {
             <div className="mb-6">
               <button
                 type="submit"
-                className="w-full px-3 py-4 text-white bg-purple-600 rounded-md transform hover:scale-105 focus:scale-100 motion-reduce:transform-none duration-300 focus:outline-none"
+                className="w-full px-3 py-4 text-white bg-pink-600 rounded-md transform hover:scale-105 focus:scale-100 motion-reduce:transform-none duration-300 focus:outline-none"
               >
                 Log in
               </button>

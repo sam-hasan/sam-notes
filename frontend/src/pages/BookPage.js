@@ -48,7 +48,7 @@ const BookPage = ({ match }) => {
 
   return (
     // conditional rendering
-    <div className="w-7/12 justify-center items-center antialiased mt-12 mb-20">
+    <div className="lg:w-7/12 sm:4/5 justify-center items-center antialiased mt-12 mb-20">
       {loading ? (
         <CircularProgress />
       ) : error ? (
@@ -165,7 +165,7 @@ const BookPage = ({ match }) => {
                   </div>
                   <div>
                     <button
-                      className="self-end bg-purple-600 text-sm uppercase py-3 px-4 text-white rounded-md transform hover:scale-105 focus:scale-100 motion-reduce:transform-none duration-300 focus:outline-none"
+                      className="self-end bg-pink-600 text-sm uppercase py-3 px-4 text-white rounded-md transform hover:scale-105 focus:scale-100 motion-reduce:transform-none duration-300 focus:outline-none"
                       type="submit"
                       disabled={loadingBookComment}
                     >
@@ -177,7 +177,7 @@ const BookPage = ({ match }) => {
             </Container>
           ) : (
             <Message>
-              Please <Link to="/login">sing in</Link> to make a comment
+              Please <Link to="/login">sign in</Link> to make a comment
             </Message>
           )}
         </Container>

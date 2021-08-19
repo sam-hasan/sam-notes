@@ -60,13 +60,13 @@ const Header = () => {
 
   return (
     <div className="w-screen bg-pink-50 shadow-lg h-20 bg-white flex flex-row items-center p-1 justify-between shadow-xs antialiased">
-      <div className="ml-32 text-3xl text-gradient hidden md:flex ">
+      <div className="lg:ml-32 sm:ml-7 text-3xl text-gradient md:flex">
         <Link to="/">
           <span style={{ fontFamily: 'Cinzel' }}>SamNotes</span>
         </Link>
       </div>
 
-      <div className="flex flex-row-reverse items-center mr-20 hidden md:flex">
+      <div className="flex flex-row-reverse items-center sm:mr-5 lg:mr-20 md:flex">
         {userInfo && userInfo.role === 'admin' && (
           <Box zIndex="tooltip">
             <Button

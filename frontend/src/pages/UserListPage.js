@@ -51,23 +51,23 @@ const UserListPage = ({ history }) => {
                 <table class="min-w-full leading-normal">
                   <thead>
                     <tr>
-                      <th class="px-5 py-4 bg-purple-600 text-left text-sm font-semibold text-white uppercase">
+                      <th class="px-5 py-4 bg-pink-600 text-left text-sm font-semibold text-white uppercase">
                         Name
                       </th>
-                      <th class="px-5 py-4 bg-purple-600 text-left text-sm font-semibold text-white uppercase">
+                      <th class="px-5 py-4 bg-pink-600 text-left text-sm font-semibold text-white uppercase">
                         Role
                       </th>
-                      <th class="px-5 py-4 bg-purple-600 text-left text-sm font-semibold text-white uppercase">
+                      <th class="px-5 py-4 bg-pink-600 text-left text-sm font-semibold text-white uppercase">
                         Email
                       </th>
-                      <th class="px-5 py-4 bg-purple-600 text-left text-sm font-semibold text-white uppercase">
+                      <th class="px-5 py-4 bg-pink-600 text-left text-sm font-semibold text-white uppercase">
                         Status
                       </th>
-                      <th class="px-5 py-4 bg-purple-600 text-left text-sm font-semibold text-white uppercase">
+                      <th class="px-5 py-4 bg-pink-600 text-left text-sm font-semibold text-white uppercase">
                         ID
                       </th>
-                      <th class="px-5 py-4 bg-purple-600 text-left text-sm font-semibold text-white uppercase"></th>
-                      <th class="px-5 py-4 bg-purple-600 text-left text-sm font-semibold text-white uppercase"></th>
+                      <th class="px-5 py-4 bg-pink-600 text-left text-sm font-semibold text-white uppercase"></th>
+                      <th class="px-5 py-4 bg-pink-600 text-left text-sm font-semibold text-white uppercase"></th>
                     </tr>
                   </thead>
                   {users.map((user) => (

@@ -30,9 +30,10 @@ mongoose
   });
 
 //starting the server
-const port = process.env.PORT || 5000;
+const port = 9000;
+console.log(port);
 const server = app.listen(port, () => {
-  console.log('App running on port 5000!');
+  console.log('App running on port 9000!');
 });
 
 // unhandled rejections (outside of express and mongo) like not being able to connect to the database
